@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Document  </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/angular-material.min.css}">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet" >
+    <link th:href="@{/css/1.css}" rel="stylesheet" />
+
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+
+Name: <span th:text="${name}">Name</span> - Age: <span th:text="${age}">Age</span>
+
+
+<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-1.5.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-animate.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-aria.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-messages.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-material.min.js}"></script>
+<script type="text/javascript" th:src="@{/jsjs/1.js}"></script>
+</body>
+</html>

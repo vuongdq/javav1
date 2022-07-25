@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Document  </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/angular-material.min.css}">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet" >
+    <link th:href="@{/css/1.css}" rel="stylesheet" />
+
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+<div class="container">
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+<h1>Product Management System</h1>
+    <a th:href="@{/admin/v1/product/showNewProductForm}" class="btn btn-primary btn-sm mb-3"> Add Product </a>
+
+<table border="1" class="table table-striped table-responsive-md">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${listProducts}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.year}"></td>
+        <td th:text="${product.price}"></td>
+        <td> <a th:href="@{/admin/v1/product/update/{id}(id=${product.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/admin/v1/product/delete/{id}(id=${product.id})}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-1.5.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-animate.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-aria.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-messages.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-material.min.js}"></script>
+<script type="text/javascript" th:src="@{/jsjs/1.js}"></script>
+</body>
+</html>

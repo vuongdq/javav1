@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WebController {
     @GetMapping("hello")
     public String Hello(){
-        return "web/hello";
+        return "hello";
     }
 }

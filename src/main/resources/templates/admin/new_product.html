@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Document  </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/angular-material.min.css}">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet" >
+    <link th:href="@{/css/1.css}" rel="stylesheet" />
+
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+
+
+<div class="container">
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+    <h1>Product Management System</h1>
+    <hr>
+    <h2>Save Product</h2>
+
+    <form action="#" th:action="@{/admin/v1/product/saveProduct}" th:object="${product}" method="POST">
+        <input type="text" th:field="*{productName}" placeholder="Product Name" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{year}" placeholder="Product Year" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{price}" placeholder="Product price" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{url}" placeholder="Product url" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Product</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/admin/v1/product}"> Back to Product List</a>
+</div>
+
+<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-1.5.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-animate.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-aria.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-messages.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/angular-material.min.js}"></script>
+<script type="text/javascript" th:src="@{/jsjs/1.js}"></script>
+</body>
+</html>
