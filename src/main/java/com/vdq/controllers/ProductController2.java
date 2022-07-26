@@ -23,7 +23,6 @@ public class ProductController2 {
         return "admin/product";
     }
 
-
     @GetMapping("/product/showNewProductForm")
     public String showNewProductForm(Model model) {
         // create model attribute to bind form data

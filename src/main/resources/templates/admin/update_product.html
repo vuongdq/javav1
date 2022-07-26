@@ -14,12 +14,21 @@
 
 
 <div class="container">
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
-    <h1>Product Management System</h1>
-    <hr>
-    <h2>Save Product</h2>
+    <div class="jumbotron">
+        <h1 class="display-3">Product Management</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="m-y-md">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Add New</a>
+            <a class="btn btn-primary btn-lg" th:href="@{/admin/v1/product/}" role="button">V1</a>
+            <a class="btn btn-primary btn-lg" th:href="@{/admin/api/product/}" role="button">V2</a>
+        </p>
+
+    <h2>Update Product</h2>
 
     <form action="#" th:action="@{/admin/v1/product/saveProduct}" th:object="${product}" method="POST">
         <!-- Add hidden form field to handle update -->
@@ -37,6 +46,7 @@
     <hr>
 
     <a th:href="@{/admin/v1/product}"> Back to Product List</a>
+    </div>
 </div>
 
 <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
